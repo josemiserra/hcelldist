@@ -1,0 +1,10 @@
+#!/bin/bash
+mkdir ~/hcell/src_2
+cp -rf ~/workspace/Hcell/src/ ~/hcell/src_2/
+cp ~/hcell/src/Makefile.am ~/hcell/src_2/src/Makefile.am
+rm -rf ~/hcell/src 
+mv ~/hcell/src_2/src ~/hcell/src
+cd ~/hcell
+autoreconf -i
+./configure
+make dist
